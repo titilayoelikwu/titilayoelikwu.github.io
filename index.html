@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+      <link rel="apple-touch-icon" href="images/avatar.webp">
+      <link rel="shortcut icon" type="image/x-icon" href="images/avatar.webp">
+  <title>Titilayo Elikwu | Video Animator & Visual Storyteller</title>
+  <!-- Add Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #6c5ce7;
+      --secondary-color: #a8a5e6;
+      --background-dark: #121212;
+      --text-light: #e0e0e0;
+      --hero-gradient: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+      --heading-font: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      --body-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    [data-bs-theme="light"] {
+      --hero-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    /* Global Styles */
+    body {
+      
+      background-color: var(--background-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      font-family: var(--body-font);
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .display-1, .display-2, .display-3, .display-4 {
+      font-family: var(--heading-font);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+    
+    .display-1 { font-size: 4.5rem; }
+    .display-2 { font-size: 3.5rem; }
+    .display-3 { font-size: 3rem; }
+    .display-4 { font-size: 2.5rem; }
+
+    .lead {
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        box-shadow: 0 5px 15px rgba(108,92,231,0.3);
+        border: none;
+        cursor: pointer;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        transform: translateY(-3px);
+        background: #5a55e0;
+    }
+    section {
+      padding: 4rem 0;
+    }
+    
+   /* Navbar Enhancements */
+    .navbar {
+        transition: all 0.3s ease;
+        padding: 1rem 0;
+    }
+
+    .nav-link {
+        position: relative;
+        padding: 0.5rem 1rem !important;
+        margin: 0 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: rgba(255,255,255,0.9);
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover .nav-link-underline,
+    .nav-link.active .nav-link-underline {
+        width: 100%;
+    }
+
+    .btn-hire-me {
+        background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+        border: none;
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-hire-me:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+    }
+
+    @media (max-width: 991px) {
+        .navbar-collapse {
+            background: rgba(108,92,231,0.95);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 10px;
+        }
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: var(--hero-gradient);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem; /* accommodate fixed navbar */
+    }
+    .hero-section h1,
+    .hero-section h2,
+    .hero-section p {
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    }
+    .hero-section .btn {
+      font-size: 1.1rem;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+    }
+    
+    /* Button Customization */
+    .btn-primary-custom {
+      background-color: var(--primary-color);
+      border: none;
+      transition: background-color 0.3s;
+    }
+    .btn-primary-custom:hover {
+      background-color: #5a55e0;
+    }
+    
+    /* Profile Image */
+    .profile-img {
+      width: 300px;
+      border: 5px solid var(--primary-color);
+    }
+    
+    /* Icon Buttons */
+    .icon-btn {
+      background-color: var(--primary-color);
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .icon-btn:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Cards (Video, Reviews, etc.) */
+    .video-card,
+    .review-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #1e1e1e;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .video-card:hover,
+    .review-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    .video-thumbnail {
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .video-card:hover .video-thumbnail {
+      transform: scale(1.05);
+    }
+    
+    /* Contact Card */
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 2rem;
+    }
+    
+    /* Progress Bars (for previous sections) */
+    .progress {
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      border-radius: 5px;
+      transition: width 1.5s ease-in-out;
+    }
+    .bg-animation {
+      background: linear-gradient(90deg, var(--primary-color) 0%, #a66efa 100%);
+    }
+    .bg-ux {
+      background: linear-gradient(90deg, #00b894 0%, #55efc4 100%);
+    }
+    
+    /* New Circular Skill Indicators */
+    .circular-progress {
+      --progress: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary-color) calc(var(--progress) * 1%), #1e1e1e 0%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      position: relative;
+    }
+    .circular-progress::before {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--background-dark);
+    }
+    .circular-progress .progress-value {
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--text-light);
+    }
+    
+    /* Enhanced Review Section */
+.review-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(108,92,231,0.1);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(108,92,231,0.1);
+  border-color: rgba(108,92,231,0.3);
+}
+
+.client-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+.review-stars {
+  color: var(--primary-color);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .client-avatar {
+    width: 50px;
+    height: 50px;
+  }
+}
+    /* Testimonials */
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .testimonial-author {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    
+    /* Reviews */
+    .review-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+    .review-stars i {
+      color: var(--primary-color);
+      margin-right: 2px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #1b1b1b;
+      padding: 2rem 0;
+      text-align: center;
+      color: #b3b3b3;
+    }
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Theme Toggle */
+    .theme-switch {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      border: none;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 0.7rem;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .theme-switch:hover {
+      transform: scale(1.1);
+    }
+.btn-orange {
+    background-color: #ff7a50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .btn-orange:hover {
+    background-color: #ff906f;
+  }
+
+  video::-webkit-media-controls-panel {
+  background-color: rgba(0,0,0,0.7) !important;
+}
+
+video::-webkit-media-controls-play-button {
+  color: #fff;
+}
+  .cta-section { 
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      padding: 100px 0;
+    }
+    /* FAQ Section Enhancements */
+#faq .position-sticky {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#faq .lead {
+  line-height: 1.7;
+  max-width: 35ch;
+}
+
+#faq .accordion-button {
+  font-size: 1.1rem;
+  padding: 1.25rem 1.5rem;
+}
+
+#faq .accordion-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+@media (min-width: 992px) {
+  #faq .position-sticky {
+    height: fit-content;
+  }
+  
+  #faq .accordion-item {
+    margin-left: -1px;
+    border-left: 2px solid var(--primary-color);
+  }
+  
+  #faq .accordion-button:not(.collapsed) {
+    background-color: rgba(108, 92, 231, 0.1);
+  }
+}
+
+/* Animation for text */
+#faq h2,
+#faq .lead {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: faqFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes faqFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Contact Section Styles */
+.contact-card {
+  border-radius: 20px;
+  border: 1px solid rgba(108, 92, 231, 0.15);
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(108, 92, 231, 0.15);
+}
+
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.form-floating > label {
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: var(--primary-color);
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.invalid-feedback {
+  font-size: 0.85rem;
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary-color);
+  color: white;
+}
+/* CTA Section Styles */
+.cta-section {
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxMjEyMTIiLz48L3N2Zz4='),
+              linear-gradient(45deg, #6c5ce7 0%, #a66efa 100%);
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(45deg, #fff 30%, #a8a5e6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  animation: float var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100%) translateX(calc(100vw * var(--random)));
+    opacity: 0;
+  }
+}
+
+.btn-primary-custom {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary-custom::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.15) 50%, transparent 80%);
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(108,92,231,0.3);
+}
+
+.btn-primary-custom:hover::after {
+  transform: rotate(45deg) translateX(100%);
+}
+
+
+/* About Section Styles */
+#about {
+  background: radial-gradient(circle at 50% 50%, rgba(108,92,231,0.1) 0%, transparent 100%);
+}
+
+.video-container {
+  position: relative;
+  transform: rotate(-2deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.video-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(108,92,231,0.1) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.play-button:hover {
+  background: var(--primary-color);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.achievement-card {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.number-glow {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #fff, var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.tool-card {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+  background: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.tool-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.testimonial-card {
+  background: linear-gradient(45deg, var(--primary-color), #7c6bea);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.1) 50%, transparent 80%);
+  transform: rotate(45deg);
+  animation: testimonialGlow 6s linear infinite;
+}
+
+.client-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes testimonialGlow {
+  0% { transform: rotate(45deg) translateX(-100%); }
+  100% { transform: rotate(45deg) translateX(100%); }
+}
+
+@media (max-width: 992px) {
+  .video-container {
+    transform: none;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Contact Form Enhancements */
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.file-upload input[type="file"] {
+  padding: 0.5rem;
+}
+
+.btn-check:checked + .btn-outline-dark {
+  background-color: rgba(108,92,231,0.2);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.form-floating textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.border-bottom {
+  border-color: rgba(108,92,231,0.3) !important;
+}
+
+/* Enhanced Pricing Styles */
+.pricing-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card.popular {
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+.pricing-card.popular::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 20%, rgba(255,255,255,0.1) 50%, transparent 80%);
+  transform: rotate(45deg);
+  animation: cardGlow 6s linear infinite;
+}
+
+@keyframes cardGlow {
+  0% { transform: rotate(45deg) translateX(-100%); }
+  100% { transform: rotate(45deg) translateX(100%); }
+}
+
+.feature-list li {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.feature-list li:last-child {
+  border-bottom: none;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 1rem;
+  right: -3rem;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 3rem;
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 15px rgba(108,92,231,0.3);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.icon-square {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-proposition {
+  position: relative;
+  z-index: 1;
+}
+
+.value-proposition::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 0%, rgba(108,92,231,0.1) 100%);
+  z-index: -1;
+  border-radius: 1rem;
+}
+
+.ribbon {
+  position: absolute;
+  top: 1rem;
+  left: -3rem;
+  padding: 0.5rem 3rem;
+  color: white;
+  transform: rotate(-45deg);
+  font-size: 0.8rem;
+  clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%, 10% 50%);
+}
+
+.ribbon.ribbon-start::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: brightness(0.8);
+  z-index: -1;
+}
+/* Custom Solutions Styling */
+.custom-solutions {
+  background: rgba(var(--primary-rgb), 0.05);
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+}
+
+.theme-overlay {
+  background: rgba(var(--primary-rgb), 0.03);
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+  background: rgba(var(--primary-rgb), 0.1);
+  border-color: rgba(var(--primary-rgb), 0.3);
+  transform: translateY(-5px);
+}
+
+.icon-square {
+  width: 54px;
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--primary-rgb), 0.15);
+  transition: all 0.3s ease;
+}
+
+.bg-primary-soft {
+  background: rgba(var(--primary-rgb), 0.15) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.z-index-0 { z-index: 0 }
+.z-index-1 { z-index: 1 }
+/* Creative Process Styling */
+.process-steps {
+  position: relative;
+}
+
+.process-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: -30px auto 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.process-line {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: rgba(108,92,231,0.3);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .process-line {
+    display: none;
+  }
+  .process-card {
+    margin-bottom: 2rem;
+  }
+  .process-number {
+    margin-top: 0;
+  }
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(108,92,231,0.1);
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(45deg, #6c5ce7 0%, #857be0 100%);
+}
+
+/* Casestudy and  modal Styling */
+  .case-study-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(108,92,231,0.1);
+    overflow: hidden;
+  }
+
+  .case-study-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(108,92,231,0.3);
+    box-shadow: 0 10px 20px rgba(108,92,231,0.1);
+  }
+
+  .case-study-img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .case-study-card:hover .case-study-img {
+    transform: scale(1.05);
+  }
+
+  .case-study-card .card-body {
+    padding: 1.5rem;
+    background: linear-gradient(180deg, 
+      rgba(18,18,18,0) 0%, 
+      rgba(18,18,18,0.8) 100%);
+  }
+  .text-gradient-primary {
+  background: linear-gradient(45deg, #6c5ce7 0%, #a66efa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-square-sm {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(108,92,231,0.1);
+}
+
+.modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.bg-primary-soft {
+  background: rgba(108,92,231,0.15) !important;
+}
+/* Green Bubble Casestudy and  modal Styling */
+bg-success-soft {
+  background: rgba(40,167,69,0.15) !important;
+}
+.text-gradient-primary {
+  background: linear-gradient(45deg, #28a745 0%, #6c5ce7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* summ Casestudy and  modal Styling */
+.bg-purple { background: #6c5ce7; }
+.bg-purple-soft { background: rgba(108,92,231,0.15); }
+.text-purple { color: #6c5ce7; }
+.text-gradient-primary {
+  background: linear-gradient(45deg, #6c5ce7 0%, #a66efa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* bg-gradient-purple  */
+.bg-gradient-purple {
+  background: linear-gradient(45deg, #6c5ce7 0%, #a66efa 100%);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-weight: 600;
+}
+
+/* Optional: Hover Animation */
+.bg-gradient-purple:hover {
+  background: linear-gradient(45deg, #5a55e0 0%, #957cea 100%);
+}
+
+  </style>
+</head>
+<body>
+
+
+ 
+<!-- Enhanced Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="
+    background: linear-gradient(135deg, 
+        rgba(108,92,231,0.98) 0%, 
+        rgba(166,110,250,0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#" style="letter-spacing: 2px;">
+            <span class="logo-icon d-inline-flex align-items-center justify-content-center rounded-circle me-2" 
+                  style="width: 36px; height: 36px; background: rgba(255,255,255,0.2);">
+                TE
+            </span>
+            TITILAYO ELIKWU
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="#pricing">
+                        <span class="nav-link-content">PRICING</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="#case-studies">
+                        <span class="nav-link-content">PROJECTS</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="#process">
+                        <span class="nav-link-content">PROCESS</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="#reviews">
+                        <span class="nav-link-content">REVIEWS</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="#contact">
+                        <span class="nav-link-content">CONTACT</span>
+                        <span class="nav-link-underline"></span>
+                    </a>
+                </li>
+            </ul>
+            <a href="#contact" class="btn btn-hire-me px-4 py-2 ms-3">
+                <i class="fas fa-paper-plane me-2"></i>Hire Me
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<section class="hero-section text-white position-relative overflow-hidden">
+  <!-- Video Background -->
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+    poster="video/fallback.jpg"
+    aria-label="Animation work samples background video"
+  >
+    <source src="video/bg.mp4" type="video/mp4">
+  </video>
+  
+  <!-- Gradient Overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" 
+       style="background: linear-gradient(45deg, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.4) 100%); z-index: 1;">
+  </div>
+
+  <!-- Content Container -->
+  <div class="container position-relative" style="z-index: 2;">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="display-1 fw-bold mb-4">Hi, I’m Titilayo</h1>
+        <h2 class="display-4 mb-3">I Create Engaging Videos for SaaS & Product Brands</h2>
+        <p class="lead mb-4 opacity-90">Whether you need animated explainers, product demos, or promotional clips, I help businesses like yours communicate complex ideas clearly. </p>
+        <div class="d-flex gap-3">
+          <a href="#contact" class="btn btn-light btn-lg px-5">Start Project</a>
+          <a href="#contact" class="btn btn-outline-light btn-lg px-5" download>
+            <i class="fas fa-download me-2"></i>Hire Me
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center mt-5 mt-lg-0">
+        <img src="images/avatar.webp" alt="Titilayo Elikwu" class="img-fluid rounded-circle shadow-lg profile-img border border-4 border-white">
+        <div class="mt-4 d-flex justify-content-center gap-3">
+    <a href="#" class="icon-btn btn-light btn-lg" target="_blank" 
+       rel="noopener noreferrer">
+        <img src="images/fiverr.webp" 
+             alt="Fiverr" 
+             style="width: 50px; height: 50px;">
+    </a>
+    <a href="https://www.upwork.com/freelancers/arowosoget" class="icon-btn btn-light btn-lg" target="_blank" 
+       rel="noopener noreferrer">
+        <img src="images/upwork.webp" 
+             alt="Upwork" 
+             style="width: 50px; height: 50px;">
+    </a>
+    <a href="https://www.linkedin.com/in/layo-elikwu/" class="icon-btn btn-light btn-lg" target="_blank" 
+       rel="noopener noreferrer">
+        <img src="images/linkedin.webp" 
+             alt="LinkedIn" 
+             style="width: 50px; height: 50px;">
+    </a>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- About Section -->
+<section id="about" class="py-5 bg-dark position-relative overflow-hidden">
+  <div class="container py-5 position-relative">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="display-2 fw-bold mb-3">A Little About Me</h2>
+      <div class="d-flex justify-content-center">
+        <div class="gradient-line"></div>
+      </div>
+    </div>
+
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="video-container position-relative rounded-4 overflow-hidden">
+          <div class="video-overlay"></div>
+          <video class="w-100 hover-scale" autoplay muted loop playsinline>
+            <source src="video/upwork_video.mp4" type="video/mp4">
+          </video>
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="ps-lg-4">
+          <div class="d-flex align-items-center mb-4">
+            <div class="icon-square bg-primary me-3">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3 class="mb-0">Crafting Visual Stories Since 2018</h3>
+          </div>
+          
+          <p class="lead mb-4 opacity-75">I’m a freelance video producer passionate about storytelling through motion. With experience in tech and marketing, I specialize in creating animated explainers, product demos, and promos for SaaS companies and startups.</p>
+          
+          <div class="achievements-grid mb-5">
+            <div class="achievement-card">
+              <div class="number-glow">200+</div>
+              <p class="mb-0">Projects Delivered</p>
+            </div>
+            <div class="achievement-card">
+              <div class="number-glow">15</div>
+              <p class="mb-0">Industry Awards</p>
+            </div>
+            <div class="achievement-card">
+              <div class="number-glow">5k+</div>
+              <p class="mb-0">Production Hours</p>
+            </div>
+          </div>
+
+          <div class="tools-section mb-5">
+            <h4 class="mb-4">Creative Arsenal</h4>
+            <div class="tools-grid">
+              <div class="tool-card">
+                <img src="images/tools/ae-icon.webp" alt="After Effects" class="tool-logo">
+                <span>After Effects</span>
+              </div>
+              <div class="tool-card">
+                <img src="images/tools/createstudio-icon.webp" alt="Blender" class="tool-logo">
+                <span>Create Studio</span>
+              </div>
+              <div class="tool-card">
+                <img src="images/tools/figma-icon.webp" alt="Figma" class="tool-logo">
+                <span>Figma</span>
+              </div>
+              <div class="tool-card">
+                <img src="images/tools/capcut-icon.webp" alt="Figma" class="tool-logo">
+                <span>CapCut</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card bg-primary-gradient p-4 rounded-3">
+            <p class="mb-3">"Always perfect to work with! Understands requests, makes adjustments if needed. Superior experience at an affordable price!"</p>
+            <div class="d-flex align-items-center">
+              <img src="images/review/Allison-Sikorsky.webp" alt="Client" class="client-avatar me-3">
+              <div>
+                <div class="fw-bold">Allison Sikorsky</div>
+                <div class="small">Founder @ PMHScribe</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  
+  
+  <!-- New Skills Section -->
+  <section id="skills-section" class="py-5">
+    <div class="container py-5">
+      <h2 class="text-center mb-5 display-4 fw-bold">Skillset & Expertise</h2>
+      <div class="row g-4">
+        <!-- Skill Card: Motion Graphics -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card skill-card text-center p-4">
+            <div class="circular-progress" style="--progress:95;">
+              <span class="progress-value">95%</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title mt-3"><i class="fas fa-film me-2"></i>Motion Graphics</h4>
+              <p class="card-text">Expert in crafting high-impact motion graphics that engage audiences.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Skill Card: 2D Animation -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card skill-card text-center p-4">
+            <div class="circular-progress" style="--progress:90;">
+              <span class="progress-value">90%</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title mt-3"><i class="fas fa-pencil-alt me-2"></i>2D Animation</h4>
+              <p class="card-text">Delivering dynamic and engaging 2D animations for diverse projects.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Skill Card: 3D Animation -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card skill-card text-center p-4">
+            <div class="circular-progress" style="--progress:85;">
+              <span class="progress-value">85%</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title mt-3"><i class="fas fa-cube me-2"></i>3D Animation</h4>
+              <p class="card-text">Creating immersive 3D animations that bring visions to life.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Skill Card: Promo Videos -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card skill-card text-center p-4">
+            <div class="circular-progress" style="--progress:92;">
+              <span class="progress-value">92%</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title mt-3"><i class="fas fa-play-circle me-2"></i>Promo Videos</h4>
+              <p class="card-text">Producing compelling promo videos that capture brand essence.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Skill Card: Product Videos -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card skill-card text-center p-4">
+            <div class="circular-progress" style="--progress:92;">
+              <span class="progress-value">92%</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title mt-3"><i class="fas fa-play-circle me-2"></i>Product Videos</h4>
+              <p class="card-text">Producing compelling promo videos that capture brand essence.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Skill Card: UGC AI Video -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card skill-card text-center p-4">
+            <div class="circular-progress" style="--progress:88;">
+              <span class="progress-value">88%</span>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title mt-3"><i class="fas fa-robot me-2"></i>UGC AI Video</h4>
+              <p class="card-text">Leveraging AI to create innovative and authentic video content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case studies section -->
+<section id="case-studies" class="py-5 bg-dark position-relative">
+  <div class="container py-5">
+    <h2 class="text-center mb-5 display-4 fw-bold">Project Case Studies</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+     
+      <!-- Case Study 1 -->
+      <div class="col">
+        <a href="#case-study-1" 
+     class="card case-study-card h-100 text-decoration-none" 
+     data-bs-toggle="modal"  
+     data-video-id="1023900596"
+     data-target-modal="#case-study-1">
+          <img src="images/sixely.webp" class="case-study-img" alt="Sixley Case Study">
+          <div class="card-body">
+            <h5 class="card-title">Sixley SaaS Video</h5>
+            <p class="card-text text-muted">AI-powered referral platform that helps companies tap into staff networks.</p>
+            <div class="badge bg-gradient-purple text-white">HRTech</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Case Study 2 -->
+      <div class="col">
+        <a href="#case-study-2" 
+     class="card case-study-card h-100 text-decoration-none" 
+     data-bs-toggle="modal"  
+     data-video-id="1074225753"
+     data-target-modal="#case-study-2" >
+          <img src="images/green_bubble.webp" class="case-study-img" alt="Green-Bubble Case Study">
+          <div class="card-body">
+            <h5 class="card-title">Green-Bubble SaaS Video</h5>
+            <p class="card-text text-muted">An online plant shop offering indoor/outdoor plants.</p>
+            <div class="badge bg-gradient-purple text-white">E-Commerce</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Case Study 3 -->
+      <div class="col">
+        <a href="#case-study-3" 
+     class="card case-study-card h-100 text-decoration-none" 
+     data-bs-toggle="modal"  
+     data-video-id="926362383"
+     data-target-modal="#case-study-3">
+          <img src="images/summ.webp" class="case-study-img" alt="SUMM Case Study">
+          <div class="card-body">
+            <h5 class="card-title">SUMM SaaS Video</h5>
+            <p class="card-text text-muted">SUMM.nl provides a SaaS platform for streamlined financial workflows.</p>
+            <div class="badge bg-gradient-purple text-white">FinTech</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Add more case studies following the same pattern -->
+    </div>
+  </div>
+</section>
+
+<!-- Case Study Modal Template 1 -->
+<div class="modal fade" id="case-study-1" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark border border-secondary">
+      <div class="modal-body p-0">
+        <div class="row g-0">
+          <!-- Video Column -->
+          <div class="col-lg-8 position-relative">
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+            <div class="ratio ratio-16x9">
+              <iframe id="caseStudyVideo1" class="w-100 h-100" frameborder="0" allow="autoplay; fullscreen" ></iframe>
+            </div>
+          </div>
+          
+          <!-- Details Column -->
+          <div class="col-lg-4 p-4" style="background: rgba(255,255,255,0.03);">
+            <div class="d-flex flex-column h-100">
+              <!-- Header -->
+              <div class="mb-4">
+                <h2 class="display-6 fw-bold mb-3 text-gradient-primary">Sixley AI Referral Platform</h2>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-primary">SaaS</span>
+                  <span class="badge bg-secondary">HR Tech</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 text-muted">
+                  <i class="fas fa-clock"></i>
+                  <span>90 Second Explainer</span>
+                </div>
+              </div>
+
+              <!-- Challenge Section -->
+              <div class="mb-4">
+                <h5 class="fw-bold mb-3"><i class="fas fa-exclamation-triangle me-2 text-warning"></i>Challenge</h5>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-2">
+                    <i class="fas fa-arrow-right text-primary me-2"></i>
+                    Abstract concept visualization
+                  </li>
+                  <li class="d-flex mb-2">
+                    <i class="fas fa-arrow-right text-primary me-2"></i>
+                    Complex AI process explanation
+                  </li>
+                  <li class="d-flex">
+                    <i class="fas fa-arrow-right text-primary me-2"></i>
+                    Data-driven HR decision making
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Solution Section -->
+              <div class="mb-4">
+                <h5 class="fw-bold mb-3"><i class="fas fa-wand-magic-sparkles me-2 text-primary"></i>Solution</h5>
+                <div class="d-flex mb-3">
+                  <div class="icon-square-sm bg-primary-soft me-3">
+                    <i class="fas fa-palette"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Brand Integration</h6>
+                    <p class="small mb-0 opacity-75">Direct import of Figma assets & style guides</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <div class="icon-square-sm bg-primary-soft me-3">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Data Visualization</h6>
+                    <p class="small mb-0 opacity-75">Animated infographics for key metrics</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Results Section -->
+              <div class="mt-auto">
+                <h5 class="fw-bold mb-3"><i class="fas fa-rocket me-2 text-success"></i>Results</h5>
+                <div class="row g-2">
+                  <div class="col-6">
+                    <div class="stat-card p-2 rounded">
+                      <div class="text-success fw-bold">40%</div>
+                      <div class="small opacity-75">Conversion Lift</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="stat-card p-2 rounded">
+                      <div class="text-primary fw-bold">10 Days</div>
+                      <div class="small opacity-75">Delivery Time</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Case Study Modal Template2 -->
+<div class="modal fade" id="case-study-2" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark border border-secondary">
+      <div class="modal-body p-0">
+        <div class="row g-0">
+          <!-- Video Column -->
+          <div class="col-lg-8 position-relative">
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+            <div class="ratio ratio-16x9">
+              <iframe id="caseStudyVideo2" class="w-100 h-100" frameborder="0" allow="autoplay; fullscreen" ></iframe>
+            </div>
+          </div>
+          
+          <!-- Details Column -->
+          <div class="col-lg-4 p-4" style="background: rgba(255,255,255,0.03);">
+            <div class="d-flex flex-column h-100">
+              <!-- Header -->
+              <div class="mb-4">
+                <h2 class="display-6 fw-bold mb-3 text-gradient-primary">Green-Bubble Plantshopper</h2>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-success">E-Commerce</span>
+                  <span class="badge bg-secondary">Botany</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 text-muted">
+                  <i class="fas fa-clock"></i>
+                  <span>30 Second Explainer</span>
+                  <i class="fas fa-leaf ms-2"></i>
+                  <span>WhatsApp Integration</span>
+                </div>
+              </div>
+
+              <!-- Challenge Section -->
+              <div class="mb-4">
+                <h5 class="fw-bold mb-3"><i class="fas fa-exclamation-triangle me-2 text-warning"></i>Challenge</h5>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-2">
+                    <i class="fas fa-seedling text-success me-2"></i>
+                    Simplify multi-step WhatsApp workflow
+                  </li>
+                  <li class="d-flex mb-2">
+                    <i class="fas fa-palette text-success me-2"></i>
+                    Maintain fresh, botanical brand identity
+                  </li>
+                  <li class="d-flex">
+                    <i class="fas fa-mobile-screen text-success me-2"></i>
+                    Drive mobile conversions
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Solution Section -->
+              <div class="mb-4">
+                <h5 class="fw-bold mb-3"><i class="fas fa-wand-magic-sparkles me-2 text-success"></i>Solution</h5>
+                <div class="d-flex mb-3">
+                  <div class="icon-square-sm bg-success-soft me-3">
+                    <i class="fas fa-comment-dots"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Chat Flow Storyboard</h6>
+                    <p class="small mb-0 opacity-75">Polished script with "Personal Plantshopper" hook</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <div class="icon-square-sm bg-success-soft me-3">
+                    <i class="fas fa-leaf"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Botanical Aesthetic</h6>
+                    <p class="small mb-0 opacity-75">Leaf motifs & natural color palette</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <div class="icon-square-sm bg-success-soft me-3">
+                    <i class="fab fa-whatsapp"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Process Visualization</h6>
+                    <p class="small mb-0 opacity-75">Animated chat flow & product selection</p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="icon-square-sm bg-success-soft me-3">
+                    <i class="fas fa-volume-up"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Nature Sound Design</h6>
+                    <p class="small mb-0 opacity-75">Rustling leaves + friendly voiceover</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Results Section -->
+              <div class="mt-auto">
+                <h5 class="fw-bold mb-3"><i class="fas fa-rocket me-2 text-success"></i>Results</h5>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div class="stat-card p-2 rounded">
+                      <div class="text-success fw-bold">20%</div>
+                      <div class="small opacity-75">Interaction Lift</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="stat-card p-2 rounded">
+                      <div class="text-success fw-bold">2</div>
+                      <div class="small opacity-75">Revision Round</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial bg-success-soft p-3 rounded">
+                  <p class="small mb-0 opacity-75">"Captured our process perfectly - botanical style on point!"</p>
+                  <div class="text-success small mt-2">Green-Bubble Team</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <!-- Case Study Modal Template3 -->
+<div class="modal fade" id="case-study-3" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark border border-secondary">
+      <div class="modal-body p-0">
+        <div class="row g-0">
+          <!-- Video Column -->
+          <div class="col-lg-8 position-relative">
+            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+            <div class="ratio ratio-16x9">
+              <iframe id="caseStudyVideo3" class="w-100 h-100" frameborder="0" allow="autoplay; fullscreen" ></iframe>
+            </div>
+          </div>
+          
+          <!-- Details Column -->
+          <div class="col-lg-4 p-4" style="background: rgba(255,255,255,0.03);">
+            <div class="d-flex flex-column h-100">
+              <!-- Header -->
+              <div class="mb-4">
+                <h2 class="display-6 fw-bold mb-3 text-gradient-primary">SUMM Feature Highlights</h2>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-purple">FinTech</span>
+                  <span class="badge bg-secondary">SaaS</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 text-muted">
+                  <i class="fas fa-film"></i>
+                  <span>2×15 Second Snippets</span>
+                  <i class="fas fa-cube ms-2"></i>
+                  <span>UI Animation</span>
+                </div>
+              </div>
+
+              <!-- Challenge Section -->
+              <div class="mb-4">
+                <h5 class="fw-bold mb-3"><i class="fas fa-scale-balanced me-2 text-warning"></i>Challenge</h5>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-2">
+                    <i class="fas fa-mobile-screen-button text-purple me-2"></i>
+                    Balance UI fidelity with abstraction
+                  </li>
+                  <li class="d-flex mb-2">
+                    <i class="fas fa-clone text-purple me-2"></i>
+                    Maintain consistency across 2 episodes
+                  </li>
+                  <li class="d-flex">
+                    <i class="fas fa-hourglass text-purple me-2"></i>
+                    3-week production timeline
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Solution Section -->
+              <div class="mb-4">
+                <h5 class="fw-bold mb-3"><i class="fas fa-wand-magic-sparkles me-2 text-purple"></i>Solution</h5>
+                <div class="d-flex mb-3">
+                  <div class="icon-square-sm bg-purple-soft me-3">
+                    <i class="fas fa-check-double"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Style Frame Approval</h6>
+                    <p class="small mb-0 opacity-75">8-second UI abstraction concept test</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <div class="icon-square-sm bg-purple-soft me-3">
+                    <i class="fab fa-figma"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Component Animation</h6>
+                    <p class="small mb-0 opacity-75">Figma asset integration & interaction design</p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="icon-square-sm bg-purple-soft me-3">
+                    <i class="fas fa-sync-alt"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">Efficient Revisions</h6>
+                    <p class="small mb-0 opacity-75">2 rounds per video for motion refinement</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Results Section -->
+              <div class="mt-auto">
+                <h5 class="fw-bold mb-3"><i class="fas fa-rocket me-2 text-success"></i>Results</h5>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div class="stat-card p-2 rounded">
+                      <div class="text-purple fw-bold">2</div>
+                      <div class="small opacity-75">Videos Delivered</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="stat-card p-2 rounded">
+                      <div class="text-success fw-bold">3</div>
+                      <div class="small opacity-75">Weeks Timeline</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial bg-purple-soft p-3 rounded">
+                  <p class="small mb-0 opacity-75">"Exceptional quality and collaboration! Will definitely hire again for future projects."</p>
+                  <div class="text-purple small mt-2">SUMM Product Team</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+  <!-- Projects Showcase Section -->
+  <section id="projects" class="py-5">
+    <div class="container py-5">
+      <h2 class="text-center mb-5 display-4 fw-bold">Showcase Reel</h2>
+      <ul class="nav nav-pills justify-content-center mb-5" id="projectTabs">
+        <li class="nav-item">
+          <a class="nav-link active " data-bs-toggle="pill" href="#saas">SAAS Videos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#product">Product Videos</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <!-- Motion Graphics Tab -->
+        <div class="tab-pane fade show active" id="saas">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+             
+
+             <!-- Video Card 1 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/wellness_cloud.webp" class="video-thumbnail card-img-top" alt="Story-Driven Motion">
+                <div class="card-body">
+                  <h5 class="card-title">Wellness Cloud Saas Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="1074223822">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 2 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/green_bubble.webp" class="video-thumbnail card-img-top" alt="Motion Magic">
+                <div class="card-body">
+                  <h5 class="card-title">Green Bubble Saas Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="1074225753">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video Card 3 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/summ_ai.webp" class="video-thumbnail card-img-top" alt="Motion Magic">
+                <div class="card-body">
+                  <h5 class="card-title">Summ UI Video Animation</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="1074224269">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 4 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/trackerjam.webp" class="video-thumbnail card-img-top" alt="trackerjam">
+                <div class="card-body">
+                  <h5 class="card-title">Trackerjam SAAS 3D Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="951539686">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 5 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/sixely.webp" class="video-thumbnail card-img-top" alt="sixley">
+                <div class="card-body">
+                  <h5 class="card-title">Sixley Saas Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="1023900596">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 6 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/energy-shares.webp" class="video-thumbnail card-img-top" alt="Brand Motion Explainer">
+                <div class="card-body">
+                  <h5 class="card-title">Energy Shares Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="1023901186">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 7 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/summ.webp" class="video-thumbnail card-img-top" alt="Epic Animation Series">
+                <div class="card-body">
+                  <h5 class="card-title">SUMM UI Product Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="926362383">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 8 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/Glacr.webp" class="video-thumbnail card-img-top" alt="Visual Dynamics">
+                <div class="card-body">
+                  <h5 class="card-title">Glacr Saas Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="977777438">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 9 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/captive_lease.webp" class="video-thumbnail card-img-top" alt="Fluid Motion Design">
+                <div class="card-body">
+                  <h5 class="card-title">Captive Lease Advisors Promo Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="1023899822">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 10 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/tsg.webp" class="video-thumbnail card-img-top" alt="Innovative Visual Effects">
+                <div class="card-body">
+                  <h5 class="card-title">TSG SAAS Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="951513360">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 11 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/dynamic.webp" class="video-thumbnail card-img-top" alt="Creative Motion Graphics">
+                <div class="card-body">
+                  <h5 class="card-title">Dynamic Pricing Saas Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="977779204">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 12 -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="images/magnifio.webp" class="video-thumbnail card-img-top" alt="Cinematic Animations">
+                <div class="card-body">
+                  <h5 class="card-title">Magnifio SAAS Video</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="951512920">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+           
+
+          </div>
+        </div>
+        <!-- Promo Videos Tab -->
+        <div class="tab-pane fade" id="product">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Example Promo Video Card -->
+            <div class="col">
+              <div class="card video-card h-100">
+                <img src="promo1-thumb.jpg" class="video-thumbnail card-img-top" alt="Promo Project 1">
+                <div class="card-body">
+                  <h5 class="card-title">Promo Project 1</h5>
+                  <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="121212121">
+                    <i class="fas fa-play me-2"></i>View Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Additional promo cards can be added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Video Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-body ratio ratio-16x9">
+          <iframe id="vimeoFrame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Creative Process Section -->
+<section id="process" class="py-5 bg-dark position-relative">
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="display-2 fw-bold mb-3">Creative Process</h2>
+      <p class="lead opacity-75">Structured workflow for premium results</p>
+    </div>
+
+    <div class="row g-5 process-steps">
+      <!-- Scripting -->
+      <div class="col-md-3">
+        <div class="process-card p-4 text-center hover-scale">
+          <div class="process-number bg-primary-gradient">1</div>
+          <h3 class="h4 my-4">Scripting</h3>
+          <p class="small opacity-90 mb-0">Crafting compelling narratives that align with your brand voice and objectives</p>
+          <div class="process-line"></div>
+        </div>
+      </div>
+
+      <!-- Voiceover -->
+      <div class="col-md-3">
+        <div class="process-card p-4 text-center hover-scale">
+          <div class="process-number bg-primary-gradient">2</div>
+          <h3 class="h4 my-4">Voiceover</h3>
+          <p class="small opacity-90 mb-0">Professional recording with accent options and perfect emotional tone matching</p>
+          <div class="process-line"></div>
+        </div>
+      </div>
+
+      <!-- Production -->
+      <div class="col-md-3">
+        <div class="process-card p-4 text-center hover-scale">
+          <div class="process-number bg-primary-gradient">3</div>
+          <h3 class="h4 my-4">Production</h3>
+          <p class="small opacity-90 mb-0">Bringing concepts to life with motion graphics, animations, and SFX</p>
+          <div class="process-line"></div>
+        </div>
+      </div>
+
+      <!-- Revisions -->
+      <div class="col-md-3">
+        <div class="process-card p-4 text-center hover-scale">
+          <div class="process-number bg-primary-gradient">4</div>
+          <h3 class="h4 my-4">Revisions</h3>
+          <p class="small opacity-90 mb-0">Fine-tuning every detail until you're 100% satisfied with the result</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- Reviews Section -->
+<section id="reviews" class="py-5 position-relative overflow-hidden">
+  <div class="container py-5">
+    <h2 class="text-center mb-5 display-4 fw-bold">Client Success Stories</h2>
+    <div class="row g-4">
+
+      <!-- Allison Sikorsky -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-card p-4 hover-scale">
+          <div class="d-flex align-items-center mb-4">
+            <img src="images/review/Allison-Sikorsky.webp" alt="Allison Sikorsky" class="client-avatar me-3">
+            <div>
+              <h5 class="mb-0">Allison Sikorsky</h5>
+              <p class="text-muted mb-0 small">Founder @ PMHScribe</p>
+            </div>
+          </div>
+          <div class="review-stars mb-3">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+          </div>
+          <p class="mb-0">"Always perfect to work with! Understands requests, makes adjustments if needed. Superior experience at an affordable price!"</p>
+        </div>
+      </div>
+
+      <!-- Nick Nevill -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-card p-4 hover-scale">
+          <div class="d-flex align-items-center mb-4">
+            <img src="images/review/Nick-Nevill.webp" alt="Nick Nevill" class="client-avatar me-3">
+            <div>
+              <h5 class="mb-0">Nick Nevill</h5>
+              <p class="text-muted mb-0 small">Marketing Consultant</p>
+              <a href="#" class="text-primary small" target="_blank">Energy Shares</a>
+            </div>
+          </div>
+          <div class="review-stars mb-3">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+          </div>
+          <p class="mb-0">"Quick responses, excellent turnaround time. Incorporated feedback perfectly. Will definitely work together again!"</p>
+        </div>
+      </div>
+
+      <!-- Ashishsha -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-card p-4 hover-scale">
+          <div class="d-flex align-items-center mb-4">
+            <img src="images/review/ashishsha.webp" alt="Ashishsha" class="client-avatar me-3">
+            <div>
+              <h5 class="mb-0">Ashishsha</h5>
+              <p class="text-muted mb-0 small">Founder @ cognix.ai</p>
+            </div>
+          </div>
+          <div class="review-stars mb-3">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+          </div>
+          <p class="mb-0">"Exceeded expectations! Video perfectly captured our SaaS platform's essence. Highly recommended!"</p>
+        </div>
+      </div>
+
+      <!-- Natasa Trajkovic -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-card p-4 hover-scale">
+          <div class="d-flex align-items-center mb-4">
+            <img src="images/review/natasha.webp" alt="Natasa Trajkovic" class="client-avatar me-3">
+            <div>
+              <h5 class="mb-0">Natasa Trajkovic</h5>
+              <p class="text-muted mb-0 small">Product Leader</p>
+              <a href="https://glacr.ai/" class="text-primary small" target="_blank">GLACR</a>
+            </div>
+          </div>
+          <div class="review-stars mb-3">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+          </div>
+          <p class="mb-0">"Amazing work, beyond impressed! Followed directions perfectly. Absolutely wonderful!"</p>
+        </div>
+      </div>
+
+      <!-- Allyson -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-card p-4 hover-scale">
+          <div class="d-flex align-items-center mb-4">
+            <img src="images/review/macus.webp" alt="Marcus" class="client-avatar me-3">
+            <div>
+              <h5 class="mb-0">Marcus</h5>
+              <p class="text-muted mb-0 small">BlockChain EDU</p>
+            </div>
+          </div>
+          <div class="review-stars mb-3">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+          </div>
+          <p class="mb-0">"An excellent experience. I got exactly what I was looking for and on time and within budget. Very responsive and listened carefully to my brief!"</p>
+        </div>
+      </div>
+
+      <!-- Bartsteeg -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-card p-4 hover-scale">
+          <div class="d-flex align-items-center mb-4">
+            <img src="images/review/bartsteeg.webp" alt="Bartsteeg" class="client-avatar me-3">
+            <div>
+              <h5 class="mb-0">Bartsteeg</h5>
+              <p class="text-muted mb-0 small">Founder @ SUMM</p>
+            </div>
+          </div>
+          <div class="review-stars mb-3">
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+          </div>
+          <p class="mb-0">"Exceptional quality and collaboration! Will definitely hire again for future projects."</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- FAQ Section -->
+  <section id="faq" class="py-5 bg-dark">
+    <div class="container py-5">
+      <div class="row g-5 align-items-start">
+        <!-- Left Column - Text Content -->
+        <div class="col-lg-5 pe-lg-5 position-sticky top-0">
+          <div class="pe-xl-4">
+            <h2 class="display-4 fw-bold mb-4">Common Questions</h2>
+            <p class="lead mb-4 opacity-75">
+              Here are answers to some of the questions I get asked most frequently. 
+              Can't find what you're looking for? Feel free to reach out directly.
+            </p>
+            <div class="d-none d-lg-block mt-5">
+              <div class="icon-btn fs-3 p-4">
+                <i class="fas fa-comments"></i>
+              </div>
+              <p class="mt-3 small opacity-75">Quick answers to help you get started</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Accordion -->
+        <div class="col-lg-7">
+          <div class="accordion" id="faqAccordion">
+            <!-- FAQ Items (keep existing accordion items) -->
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  what's your typical turnaround time for a video?
+                </button>
+              </h3>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  for a standard 30 second video, my typical timeline is 7-10 business days.
+                </div>
+              </div>
+            </div>
+
+             <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  what assets would you require from our end to get started?
+                </button>
+              </h3>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <p>1. brand assets (logos, fonts, colors etc).</p>
+<p>2. product figma file OR a working product (live / staging).</p>
+<p>3. (ideally) an in-house designer available to collaborate on various screens required for the video.</p>
+                </div>
+              </div>
+            </div>
+
+             <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Do you offer hourly billing?
+                </button>
+              </h3>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Nope. I operate on a project-based pricing model. you can find my transparent pricing structure here.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Do you offer custom packages?
+                </button>
+              </h3>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes, I offer custom packages for projects requiring more than 3 videos. if you have a larger project in mind,
+feel free to reach out to me for a tailored package.
+
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  Do you offer short-form (tikTok/ reels/shorts) video editing services?
+                </button>
+              </h3>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  No, my specialty is exclusively product videos. I don't offer video editing services for short-form or long-form
+content beyond product videos.
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <!-- Rest of your existing FAQ items here -->
+            <!-- ... (include other FAQ items same as before) ... -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-5 position-relative overflow-hidden">
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="display-2 fw-bold mb-3">Transparent Pricing</h2>
+      <p class="lead opacity-75">Simple packages with predictable costs + premium results</p>
+      <div class="d-flex justify-content-center gap-2 mt-4">
+        <span class="badge bg-primary">🎥 All Videos Include HD Delivery</span>
+        <span class="badge bg-dark">🎵 Royalty-Free Music & SFX</span>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Starter Package -->
+      <div class="col-lg-4">
+        <div class="card pricing-card border-primary-custom h-100 hover-scale">
+          <div class="card-header bg-primary-gradient py-4 position-relative">
+            <div class="ribbon ribbon-start position-absolute" style="--rbg: #6c5ce7">
+              <span>Best Value</span>
+            </div>
+            <h3 class="h1 fw-bold mb-0 text-center">Starter</h3>
+            <div class="price display-2 fw-bold text-center mt-3">$500</div>
+            <p class="text-center mb-0 mt-2">Perfect for simple product showcases</p>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled feature-list">
+              <li><i class="fas fa-check-circle text-success me-2"></i>Up to 30 seconds</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>Your script + storyboard</li>
+              <li><i class="fas fa-times-circle text-secondary me-2"></i>No voiceover included</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>Direct UpWork communication</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>2 revision rounds</li>
+              <li><i class="fas fa-rocket text-info me-2"></i>7-10 day turnaround</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-transparent border-0 text-center pb-4">
+            <a href="#contact" class="btn btn-primary-custom px-5 py-3">
+              <i class="fas fa-play-circle me-2"></i>Start Basic Project
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Standard Package -->
+      <div class="col-lg-4">
+        <div class="card pricing-card border-warning h-100 hover-scale popular">
+          <div class="card-header bg-warning-gradient py-4 position-relative">
+            <div class="popular-badge">Most Popular</div>
+            <h3 class="h1 fw-bold mb-0 text-center">Standard</h3>
+            <div class="price display-2 fw-bold text-center mt-3">$1000</div>
+            <p class="text-center mb-0 mt-2">Ideal for marketing campaigns</p>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled feature-list">
+              <li><i class="fas fa-check-circle text-success me-2"></i>Up to 60 seconds</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>Custom script development</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>Professional voiceover</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>Priority communication</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>4 revision rounds</li>
+              <li><i class="fas fa-rocket text-info me-2"></i>10-15 day delivery</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-transparent border-0 text-center pb-4">
+            <a href="#contact" class="btn btn-warning px-5 py-3">
+              <i class="fas fa-bolt me-2"></i>Choose Standard
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bundle Package -->
+      <div class="col-lg-4">
+        <div class="card pricing-card border-danger h-100 hover-scale">
+          <div class="card-header bg-danger-gradient py-4">
+            <h3 class="h1 fw-bold mb-0 text-center">3-Video Pack</h3>
+            <div class="price display-2 fw-bold text-center mt-3">$2500</div>
+            <p class="text-center mb-0 mt-2">Best for ongoing content needs</p>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled feature-list">
+              <li><i class="fas fa-check-circle text-success me-2"></i>3 videos (30-60s each)</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>Custom scripts + storyboards</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>Multi-voiceover options</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>Dedicated project manager</li>
+              <li><i class="fas fa-check-circle text-success me-2"></i>5 revisions per video</li>
+              <li><i class="fas fa-rocket text-info me-2"></i>Flexible scheduling</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-transparent border-0 text-center pb-4">
+            <a href="#contact" class="btn btn-danger px-5 py-3">
+              <i class="fas fa-layer-group me-2"></i>Get Bundle
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Custom Solutions -->
+<div class="custom-solutions mt-5 text-center py-5 px-4 rounded-4 position-relative overflow-hidden">
+  <div class="position-absolute top-0 start-0 w-100 h-100 theme-overlay z-index-0"></div>
+  <div class="position-relative z-index-1">
+    <h3 class="display-5 fw-bold mb-3">Need Custom Solutions?</h3>
+    <p class="lead mb-4 opacity-90">Need something beyond packages? Let's create a tailored solution:</p>
+    <div class="row g-4 text-start">
+      <div class="col-md-4">
+        <div class="feature-card p-4 hover-scale">
+          <div class="icon-square bg-primary-soft text-primary mb-3 rounded-3">
+            <i class="fas fa-infinity fa-2x"></i>
+          </div>
+          <h4 class="mb-3">Extended Length</h4>
+          <p class="small mb-0 opacity-90">Long-form videos, series, or ongoing content</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card p-4 hover-scale">
+          <div class="icon-square bg-primary-soft text-primary mb-3 rounded-3">
+            <i class="fas fa-globe fa-2x"></i>
+          </div>
+          <h4 class="mb-3">Global Reach</h4>
+          <p class="small mb-0 opacity-90">Multilingual support + localization</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card p-4 hover-scale">
+          <div class="icon-square bg-primary-soft text-primary mb-3 rounded-3">
+            <i class="fas fa-cube fa-2x"></i>
+          </div>
+          <h4 class="mb-3">Specialized Formats</h4>
+          <p class="small mb-0 opacity-90">3Live-action shoots, 3D animation, or hybrid projects</p>
+        </div>
+      </div>
+    </div>
+    <a href="#contact" class="btn btn-primary-custom btn-lg mt-4 px-5">
+      <i class="fas fa-magic me-2"></i>Discuss Custom Project
+    </a>
+  </div>
+</div>
+
+    <!-- Included in All Packages -->
+    <div class="package-includes mt-5 text-center">
+      <div class="alert alert-dark d-inline-flex align-items-center">
+        <i class="fas fa-gift fa-2x me-3 text-primary"></i>
+        <div class="text-start">
+          <p class="mb-0">All packages include: Concept planning, scriptwriting, production, voiceover, editing, 
+          background music, sound effects, HD export, and flexible scope adjustments</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Contact Section -->
+<section id="contact" class="py-5 position-relative overflow-hidden">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 fw-bold mb-4">Let's Connect</h2>
+        <p class="lead mb-5 opacity-75">Ready to discuss your project? Reach out directly via email or connect on LinkedIn.</p>
+        <div class="d-flex flex-column flex-lg-row gap-4 justify-content-center">
+          <a href="mailto:titilayoelikwu@gmail.com" class="btn btn-primary-custom btn-lg px-5 py-3">
+            <i class="fas fa-envelope me-2"></i>titilayoelikwu@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/layo-elikwu/" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn btn-primary-custom btn-lg px-5 py-3">
+            <i class="fab fa-linkedin me-2"></i>LinkedIn Profile
+          </a>
+        </div>
+        <div class="mt-5">
+          <p class="small opacity-75">Typically respond within 24-48 hours</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- CTA Section -->
+<section class="cta-section position-relative overflow-hidden py-6">
+  <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+  <div class="container position-relative z-index-1">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-9 col-xl-8">
+        <div class="cta-content p-5 rounded-4" style="background: linear-gradient(45deg, rgba(108,92,231,0.15) 0%, rgba(108,92,231,0.05) 100%);">
+          <div class="cta-particles">
+            <div class="particle" style="--size: 15px; --duration: 20s; --delay: 0s"></div>
+            <div class="particle" style="--size: 25px; --duration: 25s; --delay: 5s"></div>
+            <div class="particle" style="--size: 20px; --duration: 30s; --delay: 10s"></div>
+          </div>
+          <h2 class="display-3 fw-bold mb-4 text-gradient-primary">
+            Ready to Transform Your Vision<br>
+            <span class="text-white">Into Motion Magic?</span>
+          </h2>
+          <p class="lead mb-5 opacity-75">Let's collaborate to create animations that captivate your audience and elevate your brand story</p>
+          <div class="d-flex flex-column flex-lg-row justify-content-center gap-3">
+            <a href="#contact" class="btn btn-primary-custom btn-lg px-5 py-3">
+              <i class="fas fa-rocket me-2"></i>Launch Your Project
+            </a>
+            <a href="#projects" class="btn btn-outline-light btn-lg px-5 py-3">
+              <i class="fas fa-play-circle me-2"></i>View Showreel
+            </a>
+          </div>
+          <div class="mt-5 row g-4 justify-content-center">
+            <div class="col-auto">
+              <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-award text-primary fs-4"></i>
+                <div>
+                  <div class="h4 mb-0">15+</div>
+                  <small class="text-uppercase opacity-75">Industry Awards</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-project-diagram text-primary fs-4"></i>
+                <div>
+                  <div class="h4 mb-0">200+</div>
+                  <small class="text-uppercase opacity-75">Projects Delivered</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  
+ <!-- Updated Footer -->
+<footer class="bg-dark" style="padding-top:50px; padding-bottom:40px;">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="text-light">
+      © 2025 Titilayo Elikwu. All rights reserved.
+    </div>
+    <div class="text-light">
+      Crafted with <span style="color: red;">❤️</span> <a href="https://www.youtube.com/@AiCode_Alchemist" target="_blank">AI Code Alchemist</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Add this HTML just before closing body tag -->
+<button class="back-to-top">
+    <i class="fas fa-arrow-up"></i></i>
+</button>
+  
+  <!-- Theme Toggle Button 
+  <button class="btn btn-primary theme-switch shadow-lg">
+    <i class="fas fa-moon"></i>
+  </button>-->
+  
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    
+    // Video Modal Handler
+    const videoModal = document.getElementById('videoModal');
+    const vimeoFrame = document.getElementById('vimeoFrame');
+    videoModal.addEventListener('show.bs.modal', (event) => {
+      const button = event.relatedTarget;
+      const videoId = button.getAttribute('data-video-id');
+      vimeoFrame.src = `https://player.vimeo.com/video/${videoId}?autoplay=1&color=6c5ce7&title=0&byline=0&portrait=0`;
+    });
+    videoModal.addEventListener('hidden.bs.modal', () => {
+      vimeoFrame.src = '';
+    });
+
+
+// Update modal handler
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle all case study modals
+  document.querySelectorAll('.case-study-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Get video ID and target modal from data attributes
+      const videoId = this.dataset.videoId;
+      const modalId = this.dataset.targetModal;
+      const modal = document.querySelector(modalId);
+      const iframe = modal.querySelector('iframe');
+
+      // Update modal show event listener
+      const showHandler = () => {
+        iframe.src = `https://player.vimeo.com/video/${videoId}?autoplay=1&color=6c5ce7`;
+      };
+      
+      // Reset on modal hide
+      const hideHandler = () => {
+        iframe.src = '';
+        modal.removeEventListener('hidden.bs.modal', hideHandler);
+      };
+
+      modal.addEventListener('show.bs.modal', showHandler);
+      modal.addEventListener('hidden.bs.modal', hideHandler);
+
+      // Initialize Bootstrap modal
+      new bootstrap.Modal(modal).show();
+    });
+  });
+});
+
+// Back to Top Button Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });  
+
+    // Animate Progress Bars on Scroll (if any remain)
+    document.addEventListener('DOMContentLoaded', () => {
+      const progressBars = document.querySelectorAll('.progress-bar');
+      const animateOnScroll = () => {
+        progressBars.forEach(bar => {
+          const barPosition = bar.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight * 0.8;
+          if (barPosition < screenPosition) {
+            bar.style.width = bar.getAttribute('aria-valuenow') + '%';
+          }
+        });
+      };
+      window.addEventListener('scroll', animateOnScroll);
+      animateOnScroll();
+    });
+    
+    // Update Footer Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
